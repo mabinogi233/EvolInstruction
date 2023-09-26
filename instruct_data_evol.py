@@ -481,11 +481,13 @@ class Evol:
 
 if __name__ == '__main__':
 
-    orign_instruction_save_path = r"/Users/lwz/Downloads/dx_data_2.json"
-    save_path = r"/Users/lwz/Downloads/new_ins_data.json"
+    orign_instruction_save_path = r""
+    save_path = r""
 
     e = Evol()
     e.inner_loop(
+        max_evol_deep=5,
+        max_evol_step=30,
         load_path=orign_instruction_save_path,
         save_path=save_path,
     )
