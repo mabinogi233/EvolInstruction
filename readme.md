@@ -17,7 +17,7 @@ This tool is refer to **https://github.com/nlpxucan/WizardLM** and **https://arx
 ## · how to use it
 
 1. python >= 3.8 (recommend)
-2. selenium version > 0.0.266
+2. langchain version > 0.0.266
 3. Spark AI Model appid, api_key, api_secret (see https://xinghuo.xfyun.cn/sparkapi)
 
 If you satisfied these requriement, you can copy the source code in a package of your project to use it.
