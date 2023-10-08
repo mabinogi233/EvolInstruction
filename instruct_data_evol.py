@@ -322,7 +322,7 @@ class Evol:
         But the rewritten prompt must be reasonable and must be understood and responded by humans.
         Your rewriting cannot omit the non-text parts such as the table and code in #Given Prompt#:. Also, please do not omit the input in #Given Prompt#.
         You SHOULD complicate the given prompt using the following method:
-        Please replace general concepts with more specific concepts. or
+        If #Given Prompt# can be solved with just a few simple thinking processes, you can rewrite it to explicitly request multiple-step reasoning.
         You should try your best not to make the #Rewritten Prompt# become verbose, #Rewritten Prompt# can only add 10 to 20 words into #Given Prompt#.
         '#Given Prompt#', '#Rewritten Prompt#', 'given prompt' and 'rewritten prompt' are not allowed to appear in #Rewritten Prompt#
         #Given Prompt#:
@@ -332,17 +332,17 @@ class Evol:
         '''
         t = PromptTemplate(
             input_variables=["instruction"],
-            template = "I want you act as a Prompt Rewriter.\n"+
-                       "Your objective is to rewrite a given prompt into a more complex version to make those famous AI systems (e.g., ChatGPT and GPT4) a bit harder to handle.\n"+
-                       "But the rewritten prompt must be reasonable and must be understood and responded by humans.\n"+
-                       "Your rewriting cannot omit the non-text parts such as the table and code in #Given Prompt#:. Also, please do not omit the input in #Given Prompt#.\n"+
-                       "You SHOULD complicate the given prompt using the following method:\n"+
-                       "Please replace general concepts with more specific concepts. or\n"+
-                       "You should try your best not to make the #Rewritten Prompt# become verbose, #Rewritten Prompt# can only add 10 to 20 words into #Given Prompt#.\n"+
-                       "'#Given Prompt#', '#Rewritten Prompt#', 'given prompt' and 'rewritten prompt' are not allowed to appear in #Rewritten Prompt#\n"+
-                       "#Given Prompt#:\n"+
-                       "<{instruction}>\n"+
-                       "#Rewritten Prompt#:",
+            template =  "I want you act as a Prompt Rewriter.\n"+
+                        "Your objective is to rewrite a given prompt into a more complex version to make those famous AI systems (e.g., ChatGPT and GPT4) a bit harder to handle.\n"+
+                        "But the rewritten prompt must be reasonable and must be understood and responded by humans.\n"+
+                        "Your rewriting cannot omit the non-text parts such as the table and code in #Given Prompt#:. Also, please do not omit the input in #Given Prompt#.\n"+
+                        "You SHOULD complicate the given prompt using the following method:\n"+
+                        "If #Given Prompt# can be solved with just a few simple thinking processes, you can rewrite it to explicitly request multiple-step reasoning.\n"+
+                        "You should try your best not to make the #Rewritten Prompt# become verbose, #Rewritten Prompt# can only add 10 to 20 words into #Given Prompt#.\n"+
+                        "'#Given Prompt#', '#Rewritten Prompt#', 'given prompt' and 'rewritten prompt' are not allowed to appear in #Rewritten Prompt#\n"+
+                        "#Given Prompt#:\n"+
+                        "<{instruction}>\n"+
+                        "#Rewritten Prompt#:",
         )
         return t
 
